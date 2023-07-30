@@ -1,0 +1,69 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #343434;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.idea-container {
+  text-align: center;
+  margin-bottom: 20px;
+
+}
+
+p, h1 {
+  color: #fff;  
+}
+
+.timer {
+    background: -webkit-linear-gradient(left, green 50%, #eee 50%);
+    border-radius: 100%;
+    height: calc(var(--size) * 1px);
+    width: calc(var(--size) * 1px);
+    position: relative;
+    -webkit-animation: time calc(var(--duration) * 1s) steps(1000, start) infinite;
+      -webkit-mask: radial-gradient(transparent 50%,#000 50%);
+      mask: radial-gradient(transparent 50%,#000 50%);
+}
+.mask {
+    border-radius: 100% 0 0 100% / 50% 0 0 50%;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 50%;
+    -webkit-animation: mask calc(var(--duration) * 1s) steps(500, start) infinite;
+    -webkit-transform-origin: 100% 50%;
+}
+@-webkit-keyframes time {
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+@-webkit-keyframes mask {
+    0% {
+        background: #eee;
+        -webkit-transform: rotate(0deg);
+    }
+    50% {
+        background: #eee;
+        -webkit-transform: rotate(-180deg);
+    }
+    50.01% {
+        background: green;
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        background: green;
+        -webkit-transform: rotate(-180deg);
+    }
+}
